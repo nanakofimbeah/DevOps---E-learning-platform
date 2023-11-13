@@ -1,0 +1,4 @@
+{
+    "policyText": file("policies/ecr_policy.json")
+  }
+  

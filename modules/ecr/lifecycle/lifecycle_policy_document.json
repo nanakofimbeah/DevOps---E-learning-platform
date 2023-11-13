@@ -1,0 +1,4 @@
+{
+    "lifecyclePolicyText": file("lifecycle/lifecycle_policy.json")
+  }
+  
