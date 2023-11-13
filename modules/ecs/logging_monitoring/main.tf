@@ -13,13 +13,13 @@ resource "aws_cloudwatch_metric_alarm" "ecs_cpu_alarm" {
   statistic           = "SampleCount"
   threshold           = var.cpu_threshold
   alarm_description   = "ECS CPU Utilization Alarm"
-  alarm_action        = aws_sns_topic.ecs_alerts.arn
+ alarm_actions             = ["${aws_sns_topic.ecs_alerts.arn}"]
 
   dimensions = {
-    ClusterName = aws_ecs_cluster.example.name
+    ClusterName = aws_ecs_cluster.my_cluster.name
   }
 
-  alarm_description = "ECS CPU Utilization Alarm"
+
 }
 
 resource "aws_sns_topic" "ecs_alerts" {
